@@ -85,13 +85,13 @@ p{
 
 .mixin-notes {
     width: 100%;
-    height: 700px;
+    height: 600px;
 }
 
 .mixin-notes__no-arg {
     
-    position: relative;
-    width: 100%;
+    /*position: relative;*/
+    width: 800px;
     height: 50px;
 
 
@@ -99,38 +99,36 @@ p{
 
 .mixin-notes__mixin-no-arg-declare {
     
-    position: absolute;
+    /*position: absolute;
     left: 30px;
-    top: 30px;
+    top: 30px;*/
+    width: 400px;
+    height: 234px;
+    float: left;
 }
 
 .mixin-notes__mixin-no-arg-use {
-    position: absolute;
+   /* position: absolute;
     right: 30%;
-    top: 30px;
+    top: 30px; */
+    width: 400px;
+    float: right;
 }
 
 .mixin-notes__w-arg {
-    
-    position: relative;
-    top: 240px;
-    width: 100%;
-    height: 300px;
-
+    width: 600px;
 
 }
 
 .mixin-notes__mixin-w-arg-declare {
     
-    position: absolute;
-    left: 30px;
-    top: 30px;
+    width: 300px;
+    float: left;
 }
 
 .mixin-notes__mixin-w-arg-use {
-    position: absolute;
-    right: 30%;
-    top: 30px;
+    width: 300px;
+    float: right;
 }
 
 
