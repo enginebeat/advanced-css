@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CSS/Sass Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="notes.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1>CSS and Sass Notes</h1>
+    <hr>
+
+    <h3>How is specificity calculated</h3>
+
+    <p></p>
+    <h3>Cascade and Specificity: what you need to know</h3>
+
+    <ul>
+        <li>CSS declarations marked with !important have the highest priority.</li>
+        <li>But, only use !important as a last resourt. It's better to use correct specificities - <strong> more maintainable code!</strong></li>
+        <li>Inline styles will always have priority over styles in external stylesheets.</li>
+        <li>A selector that contains <strong>1</strong> ID is more specific than one with <strong>1000</strong> classes.</li>
+        <li>A selector that contans <strong>1</strong> class is more specific than one with <strong>1000</strong> elements.</li>
+        <li>The universal selector * has a specificity value of (0, 0, 0, 0).</li>
+        <li>Rely more on <strong>specificity</strong> than on the <strong>order</strong> of the selectors.</li>
+        <li>But, rely on order when using 3rd-party stylesheets - always put your author stylesheet last.</li>
+    </ul>
+
+    <h2>How units are converted from relative to absolute (px)</h2>
+    <div class="main-block">
+        <div class="div-css-left">
+            <h3>Section 3, Lecture 16</h3>
+        </div>
+        <div class="css-code">
+            <p class="text-tan">html<span class="text-white">,</span> body <span class="text-white">{</span></p>
+            <p class="indent text-grey">font-size<span class="text-white">:</span><span class="text-chocolate"> 16px</span><span class="text-white">;</span></p>
+            <p class="indent text-grey">width<span class="text-white">:</span><span class="text-chocolate"> 80vm</span><span class="text-white">;</span></p>
+            <p class="text-white">}</p>
+            <p></p>
+            <p class="text-tan">header <span class="text-white">{</span></p>
+            <p class="indent text-grey">font-size<span class="text-white">: </span><span class="text-chocolate">150%</span><span class="text-white">;</span></p>
+            <p class="indent text-grey">padding<span class="text-white">: </span><span class="text-chocolate">2em</span><span class="text-white">;</span></p>
+            <p class="indent text-grey">margin-bottom<span class="text-white">: </span><span class="text-chocolate">10rem</span><span class="text-white">;</span></p>
+            <p class="indent text-grey">height<span class="text-white">: </span><span class="text-chocolate">90vh</span><span class="text-white">;</span></p>
+            <p class="indent text-grey">width<span class="text-white">: </span><span class="text-chocolate">1000px</span><span class="text-white">;</span></p>
+            <p class="text-white">}</p>
+            <p></p>
+            <p class="text-tan">.header-child <span class="text-white">{</span></p>
+            <p class="indent text-grey">font-size<span class="text-white">: </span><span class="text-chocolate">3em</span><span class="text-white">;</span></p>
+            <p class="indent text-grey">padding<span class="text-white">: </span><span class="text-chocolate">10%</span><span class="text-white">;</span></p>
+            <p class="text-white">}</p>
+
+        </div>
+    </div>
+    <div class="div-under">
+        <h3>CSS value processing: What you need to know</h3>
+        <ul>
+            <li>Each property has an initial value, used if nothing is declared (and if there is no inheritance)</li>
+            <li>Browers specify a <strong>root font-size</strong> for each page (usually 16px)</li>
+            <li>Percentages and relative values are always converted to pixels.</li>
+            <li>Percentages are measured relative to their parent's <strong>font-size</strong>, of used to specify font-size.</li>
+            <li>Percentages are measured relative to their parent's <strong>width</strong>, if used to specify lengths.</li>
+            <li>em are measured relative to their <strong>parent</strong> font-size, if used to specify font-size.</li>
+            <li>em are measured relative to the <strong>current</strong> font-size, i used to specify lenghts.</li>
+            <li>rem are always measured relative to the <strong>document's root</strong> font-size.</li>
+            <li>vh and vw are simply precentage measurements of the viewport's height and width.</li>
+
+        </ul>
+    </div>
+    <div>
+        <h3>inheritance: What you need to know</h3>
+        <ul>
+            <li>Inheritance passes the value for some specific properties from parents to children - <strong>more maintainable code</strong>.</li>
+            <li>Properties related to text are inherited: font-family, font-size, color, etc.</li>
+            <li>The computed value of a property is what gets inherited, <strong>not</strong> the declared value.</li>
+            <li>Inheritance of a property only works if no one declares a value for that property.</li>
+            <li>The inherit keyword forces inheritance on a certain porperty.</li>
+            The initial keyword resets a property to its initial value.
+        </ul>
+    </div>
+    <div>
+        <h3>Component driver design</h3>
+        <ul>
+            <li>add list here</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Block Element Modifier (<strong>BEM</strong>)</h3>
+        <ul>
+            <li><strong>Block</strong>: standalone component that is meaningful on its own.</li>
+            <li><strong>Element</strong>: part of a block that has no standalone meaning.</li>
+            <li><strong>Modifier</strong>: a different version of a block or an elemnent.</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Main Sass features</h3>
+        <ul>
+            <li><strong>Variables</strong>: for reusable values such as colors, font-size, spacing, etc.</li>
+            <li><strong>Nesting</strong>: to nest selectors inside of one another, allowing us to write less code.</li>
+            <li><strong>Operators</strong>: for mathematical operations right inside of CSS</li>
+            <li><strong>Partials and imports</strong>: to write CSS in different files and importing them all into one single file.</li>
+            <li><strong>Mixins</strong>: to write reusable pieces of CSS code.</li>
+            <li><strong>Functions</strong>: similar to mixins, with the difference that they produce a value that can then be used.</li>
+            <li><strong>Extends</strong>: to make different selectors inherit declarations that are common to all of them.</li>
+            <li><strong>Control directives</strong>: for writing complex code using conditionals and loops.</li>
+        </ul>
+    </div>
+    <div class="clearfix-workaround clearfix">
+        <h3>Check the clearfix class solution for when the child elements are floating causing the parent element to colapse</h3>
+        <p>the normal solution is to add the clearfix class to the parent element:</p>
+        <div class="clearfix-workaround__html-code">
+            <img src="notes_img/clearfix__html-code.png" alt="html">
+        </div>
+        <div class="clearfix-workaround__scss-code">
+            <img src="notes_img/clearfix__scss-code.png" alt="scss">
+        </div>
+
+    </div>
+
+    <div class="mixin-notes">
+        <h3> Using Mixins and functions</h3>
+        <div class="mixin-notes__no-arg">
+            <div class="mixin-notes__mixin-no-arg-declare">
+                <p>mixin declaration with no arguments</p>
+                <img src="notes_img/mixin_no_arg_declare.PNG" alt="mixin1">
+            </div>
+            <div class="mixin-notes__mixin-no-arg-use">
+                <p>mixin with no argument use</p>
+                <img src="notes_img/mixin_no_arg_use.PNG" alt="mixin2">
+            </div>
+        </div>
+        
+        <div class="mixin-notes__w-arg">
+            <div class="mixin-notes__mixin-w-arg-declare">
+                <p>declaration of a mixin with an argument</p>
+                <img src="notes_img/mixin_w_arg_declare.PNG" alt="mixin3">
+            </div>
+            <div class="mixin-notes__mixin-w-arg-use">
+                <p>mixin with an argument use</p>
+                <img src="notes_img/mixin_w_arg_use.PNG" alt="mixin4">
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Function</h3>
+    </div>
+
+
+</body>
+</html>
