@@ -4,6 +4,7 @@ body{
     font-size: 20px;
     line-height: 1.7;
     background-color: rgb(240, 235, 229);
+    margin-left: 40px;
     
 }
 
@@ -131,5 +132,36 @@ p{
     float: right;
 }
 
+.function-notes {
+    width: 800px;
+    height: 350px;
+}
 
+.function-notes__declaration {
+    float: left;
+    width: 400px;
+}
 
+.function-notes__use {
+    float: right;
+    width: 400px;
+}
+
+.extends-notes {
+    width: 800px;
+    height: 500px;
+}
+
+.extends-notes__text {
+    height: 120px;
+}
+
+.extends-notes__declaration {
+    float: left;
+    width: 400px;
+}
+
+.extends-notes__use {
+    float: right;
+    width: 400px;
+}
