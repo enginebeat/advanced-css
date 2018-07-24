@@ -13,13 +13,15 @@ $colour-primary-darker: #28b485;
 
 $colour-dark-grey: #777;
 $colour-white: #fff;
+$colour-black: #000;
 
-*,
-*::after,
-*::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: inherit; /* making every element inherit box-sizing set in the body element */
+* {
+    &::after,
+    &::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit; /* making every element inherit box-sizing set in the body element */
+    }
 }
 
 html{
@@ -49,98 +51,103 @@ body{
     clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
     /*clip-path: circle(40%);*/
     position: relative;
-}
 
-.header__logo-box{
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-}
-
-.header__logo{
-    height: 3.5rem;
-}
-
-/* to show hover
-.logo:hover{
-    animation: moveInRight 1s ease-out;
-}
-*/
-
-/*
-    this will position the text box in the centre
-    of the header.
-    by using the absolute positioning and then 
-    giving it percentages as the top & left distances
-    we make sure the 0,0 coordinates of the text box are at 
-    that position. but what we really want is to centre the box.
-    so by using transform translate at -50, -50 we get the the text
-    box rigth in the centre.
-    importante thing is that the first two distances are in relation
-    to the parent element and locate the top left of the box at that position,
-    but the transform is in relation to itself so we move it always to the 
-    centre of the parent. 
-
-*/
-.header__text-box{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-}
-
-.heading-primary{
-    color: $colour-white;
-    text-transform: uppercase;
-    margin-bottom: 6rem;
-
-}
-
-/*  A span element is default an inline element,
-    so to get them under each other we tell them 
-    to display as block elements instead.
-    block elements will display one under the other 
-    take the all width in the parent 
-    and add a line brake bettween elements 
-*/
-.heading-primary--main{
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-
-    animation-name: moveInLeft;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-
-    /*  to fix small shake at the beggining 
-        of the animation. No one knows why it happens
-        so this hake is used.
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 3.5rem;
+    }
+    
+    /* to show hover
+    .logo:hover{
+        animation: moveInRight 1s ease-out;
+    }
     */
-    backface-visibility: hidden;
     
     /*
-    animation-delay: 3s;
-    animation-iteration-count: 3;
+        this will position the text box in the centre
+        of the header.
+        by using the absolute positioning and then 
+        giving it percentages as the top & left distances
+        we make sure the 0,0 coordinates of the text box are at 
+        that position. but what we really want is to centre the box.
+        so by using transform translate at -50, -50 we get the the text
+        box rigth in the centre.
+        importante thing is that the first two distances are in relation
+        to the parent element and locate the top left of the box at that position,
+        but the transform is in relation to itself so we move it always to the 
+        centre of the parent. 
     
     */
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
 }
 
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.7rem;
+.heading {
+    &-primary{
+        color: $colour-white;
+        text-transform: uppercase;
+        margin-bottom: 6rem;
     
-    animation: moveInRight 1s ease-out;
+        /*  A span element is default an inline element,
+        so to get them under each other we tell them 
+        to display as block elements instead.
+        block elements will display one under the other 
+        take the all width in the parent 
+        and add a line brake bettween elements 
+        */
+        &--main{
+            display: block;
+            font-size: 6rem;
+            font-weight: 400;
+            letter-spacing: 3.5rem;
+        
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        
+            /*  to fix small shake at the beggining 
+                of the animation. No one knows why it happens
+                so this hake is used.
+            */
+            backface-visibility: hidden;
+            
+            /*
+            animation-delay: 3s;
+            animation-iteration-count: 3;
+            
+            */
+        }
+        
+        &--sub{
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1.7rem;
+            
+            animation: moveInRight 1s ease-out;
+            
+            /*
+            animation-name: moveInRight;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            */
+        }
+    }
     
-    /*
-    animation-name: moveInRight;
-    animation-duration: 1s;
-    animation-timing-function: ease-out;
-    */
+    
 }
+
+
 
 @keyframes moveInLeft{
     0% {
@@ -196,59 +203,64 @@ body{
     }
 }
 
-.btn:link,
-.btn:visited {
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s;
-    position: relative;
-    font-size: 1.6rem;
+.btn {
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius: 10rem;
+        transition: all .2s;
+        position: relative;
+        font-size: 1.6rem;
 
-    /*animation: moveInBottom 1s;*/
+        /*animation: moveInBottom 1s;*/
+    }
+
+    &:hover {
+        transform: translateY(-.3rem);
+        box-shadow: 0 1rem 2rem rgba($colour-black, 0.2);
+
+        &::after{
+            transform: scale(1.2);
+            opacity:0;
+        }
+    }
+
+    &:active{
+        transform: translateY(-1px);
+        box-shadow: 0 .5rem 2rem rgba($colour-black,0.2);
+    }
+
+    &--white{
+        background-color: $colour-white;
+        color: $colour-dark-grey;
+
+        &::after{
+            background-color: $colour-white;
+        }
+
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    
+    
+
+    &--animated{
+        animation: moveInBottom 0.5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
 }
 
-.btn:hover {
-    transform: translateY(-.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
-
-}
-
-.btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 .5rem 2rem rgba(0,0,0,.2);
-}
-
-.btn--white{
-    background-color: $colour-white;
-    color: $colour-dark-grey;
-
-}
-
-.btn::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: all .4s;
-}
-.btn--white::after{
-    background-color: $colour-white;
-}
-
-.btn:hover::after{
-    transform: scale(1.2);
-    opacity:0;
-}
-
-.btn--animated{
-    animation: moveInBottom 0.5s ease-out .75s;
-    animation-fill-mode: backwards;
-}

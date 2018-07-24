@@ -186,10 +186,44 @@
     </div>
     <div>
         <hr>
+        <h3>Installation of hte Sass package</h3>
         <p>To install the sass npm package:</p>
-        <p>npm install node-sass --save-dev</p>
-        <p>the -dev flag means that we are using the node-sass package for developement only.</p>
+        <ul>
+            <li>npm install node-sass --save-dev</li>
+            <li>the -dev flag means that we are using the node-sass package for developement only.</li>
+        </ul>
         
+    </div>
+    <div class="compile-sass">
+        <hr>
+        <h3>Useful and interestiong tools to automate the workflow</h3>
+        <p>adding Sass compilation script to package.json</p>
+        <div>
+            <img src="notes_img/compile_sass_package_json.PNG" alt="compile-sass__pic1">
+        </div>
+
+        <p>to start auto compilaton on file change (save), just run the script</p>
+        <ul>
+            <li>npm run compile:sass</li>
+        </ul>
+    </div>
+    <div class="live-server-notes">
+        <h3>Live server</h3>
+        <p>another very useful tool is live server, which will update and serve the page on change of any of the files.</p>
+        <p>need to change the target browser to be Chrome</p>
+        <p>Install package for live server globally:</p>
+        <ul>
+            <li>npm install live-server -g</li>
+        </ul>
+        <p>To run it just navigate to the project folder and type:</p>
+        <ul>
+            <li>live-server</li>
+        </ul>
+        <p>if everything is good the main page for the project should open on the specified browser</p>
+        <p><strong>note:</strong> need to investigate further but, if you are compiling sass start that 
+            first then start live-server.<br>
+            Found that if you do it the other way around it will not work.
+        </p>
     </div>
 
 
