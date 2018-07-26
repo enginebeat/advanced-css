@@ -1,0 +1,63 @@
+body{
+    font-family: "Lato", "sans-serif";
+    font-weight: 400;
+    /*font-size: 16px*/;
+    line-height: 1.7;
+    color: $colour-dark-grey;
+    padding: 3rem; /* responsable for small border around the all of the page */
+}
+
+
+
+.heading {
+    &-primary{
+        color: $colour-white;
+        text-transform: uppercase;
+        margin-bottom: 6rem;
+    
+        /*  A span element is default an inline element,
+        so to get them under each other we tell them 
+        to display as block elements instead.
+        block elements will display one under the other 
+        take the all width in the parent 
+        and add a line brake bettween elements 
+        */
+        &--main{
+            display: block;
+            font-size: 6rem;
+            font-weight: 400;
+            letter-spacing: 3.5rem;
+        
+            animation-name: moveInLeft;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+        
+            /*  to fix small shake at the beggining 
+                of the animation. No one knows why it happens
+                so this hake is used.
+            */
+            backface-visibility: hidden;
+            
+            /*
+            animation-delay: 3s;
+            animation-iteration-count: 3;
+            
+            */
+        }
+        
+        &--sub{
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 1.7rem;
+            
+            animation: moveInRight 1s ease-out;
+            
+            /*
+            animation-name: moveInRight;
+            animation-duration: 1s;
+            animation-timing-function: ease-out;
+            */
+        }
+    }
+}

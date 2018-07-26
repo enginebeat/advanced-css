@@ -1,0 +1,17 @@
+* {
+    &::after,
+    &::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: inherit; /* making every element inherit box-sizing set in the body element */
+    }
+}
+
+html{
+    /* this defines what 1rem is so it is a global setting instead of typography */
+    font-size: 62.5%; /* 1rem is now exactly 10px */
+}
+
+body{
+    box-sizing: border-box; /* border box which includes padding and margin */
+}

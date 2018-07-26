@@ -1,0 +1,49 @@
+.header{
+    height: 95vh; /* height of view port */
+    background-image: linear-gradient(to right bottom, $colour-primary-lighter, $colour-primary-darker),url(../img/hero.jpg);
+    background-size: cover; /* will cover the all of the element */
+    background-position: top;
+
+    clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+    /*clip-path: circle(40%);*/
+    position: relative;
+
+    &__logo-box{
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+    }
+    
+    &__logo{
+        height: 3.5rem;
+    }
+    
+    /* to show hover
+    .logo:hover{
+        animation: moveInRight 1s ease-out;
+    }
+    */
+    
+    /*
+        this will position the text box in the centre
+        of the header.
+        by using the absolute positioning and then 
+        giving it percentages as the top & left distances
+        we make sure the 0,0 coordinates of the text box are at 
+        that position. but what we really want is to centre the box.
+        so by using transform translate at -50, -50 we get the the text
+        box rigth in the centre.
+        importante thing is that the first two distances are in relation
+        to the parent element and locate the top left of the box at that position,
+        but the transform is in relation to itself so we move it always to the 
+        centre of the parent. 
+    
+    */
+    &__text-box{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}

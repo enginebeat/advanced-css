@@ -1,11 +1,44 @@
 /*
 COLORS:
-
 Light green: #7ed56f
 Medium green: #55c57a
 Dark green: #28b485
-
 */
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  /* to show rotate
+    60%{
+        transform: rotate(90deg);
+    }
+    */
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
 *::after, *::before {
   margin: 0;
   padding: 0;
@@ -13,8 +46,13 @@ Dark green: #28b485
   /* making every element inherit box-sizing set in the body element */ }
 
 html {
+  /* this defines what 1rem is so it is a global setting instead of typography */
   font-size: 62.5%;
   /* 1rem is now exactly 10px */ }
+
+body {
+  box-sizing: border-box;
+  /* border box which includes padding and margin */ }
 
 body {
   font-family: "Lato", "sans-serif";
@@ -23,52 +61,7 @@ body {
   line-height: 1.7;
   color: #777;
   padding: 3rem;
-  /* responsable for small border around the all of the page */
-  box-sizing: border-box;
-  /* border box which includes padding and margin */ }
-
-.header {
-  height: 95vh;
-  /* height of view port */
-  background-image: linear-gradient(to right bottom, #7ed56fb7, #28b485c2), url(../img/hero.jpg);
-  background-size: cover;
-  /* will cover the all of the element */
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
-  /*clip-path: circle(40%);*/
-  position: relative;
-  /* to show hover
-    .logo:hover{
-        animation: moveInRight 1s ease-out;
-    }
-    */
-  /*
-        this will position the text box in the centre
-        of the header.
-        by using the absolute positioning and then 
-        giving it percentages as the top & left distances
-        we make sure the 0,0 coordinates of the text box are at 
-        that position. but what we really want is to centre the box.
-        so by using transform translate at -50, -50 we get the the text
-        box rigth in the centre.
-        importante thing is that the first two distances are in relation
-        to the parent element and locate the top left of the box at that position,
-        but the transform is in relation to itself so we move it always to the 
-        centre of the parent. 
-    
-    */ }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
+  /* responsable for small border around the all of the page */ }
 
 .heading-primary {
   color: #fff;
@@ -110,41 +103,6 @@ body {
             animation-duration: 1s;
             animation-timing-function: ease-out;
             */ }
-
-@keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem); }
-  /* to show rotate
-    60%{
-        transform: rotate(90deg);
-    }
-    */
-  80% {
-    transform: translateX(1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem); }
-  80% {
-    transform: translateX(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(10rem); }
-  80% {
-    transform: translateY(-1rem); }
-  100% {
-    opacity: 1;
-    transform: translate(0); } }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -189,3 +147,72 @@ body {
 .btn--animated {
   animation: moveInBottom 0.5s ease-out .75s;
   animation-fill-mode: backwards; }
+
+.header {
+  height: 95vh;
+  /* height of view port */
+  background-image: linear-gradient(to right bottom, #7ed56fb7, #28b485c2), url(../img/hero.jpg);
+  background-size: cover;
+  /* will cover the all of the element */
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0%, 100% 80%, 0 100%);
+  /*clip-path: circle(40%);*/
+  position: relative;
+  /* to show hover
+    .logo:hover{
+        animation: moveInRight 1s ease-out;
+    }
+    */
+  /*
+        this will position the text box in the centre
+        of the header.
+        by using the absolute positioning and then 
+        giving it percentages as the top & left distances
+        we make sure the 0,0 coordinates of the text box are at 
+        that position. but what we really want is to centre the box.
+        so by using transform translate at -50, -50 we get the the text
+        box rigth in the centre.
+        importante thing is that the first two distances are in relation
+        to the parent element and locate the top left of the box at that position,
+        but the transform is in relation to itself so we move it always to the 
+        centre of the parent. 
+    
+    */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
