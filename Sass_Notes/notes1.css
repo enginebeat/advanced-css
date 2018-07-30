@@ -6,6 +6,7 @@
     max-width: 100%;
     background-color: #eee;
     margin: 0 auto;
+    display: block;
 }
 
 .left-margin {
@@ -20,7 +21,7 @@
 
 .horizontal-gutter {
     float: left;
-    width: 5%;
+    min-width: 5%;
     background-color: aqua;
 }
 
