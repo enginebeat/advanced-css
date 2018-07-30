@@ -1,11 +1,30 @@
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /* making every element inherit box-sizing set in the body element */
+}
+
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /* making every element inherit box-sizing set in the body element */  
+}
+
+html{
+    /* this defines what 1rem is so it is a global setting instead of typography */
+    font-size: 62.5%; /* 1rem is now exactly 10px */
+}
+
 body{
     font-family: "Lato", "sans-serif";
     font-weight: 400;
     font-size: 20px;
     line-height: 1.7;
     background-color: rgb(240, 235, 229);
-    margin-left: 40px;
-    
+    /*margin-left: 40px;*/
+    box-sizing: border-box; /* border box which includes padding and margin */
+    size: 90vw;
+    padding: 3rem;
 }
 
 .clearfix::after {
@@ -165,3 +184,11 @@ p{
     float: right;
     width: 400px;
 }
+
+.row {
+    max-width: 60%rem;
+    background-color: #eee;
+    margin: 0 auto;
+}
+
+

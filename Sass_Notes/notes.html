@@ -8,7 +8,8 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="notes.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="notes1.css">
+    <!--<script src="main.js"></script>-->
 </head>
 <body>
     <h1>CSS and Sass Notes</h1>
@@ -31,11 +32,11 @@
     </ul>
 
     <h2>How units are converted from relative to absolute (px)</h2>
-    <div class="main-block">
-        <div class="div-css-left">
+    <div class=" row main-block">
+        <div class=" col-3-of-4 div-css-left">
             <h3>Section 3, Lecture 16</h3>
         </div>
-        <div class="css-code">
+        <div class=" col-1-of-4 css-code">
             <p class="text-tan">html<span class="text-white">,</span> body <span class="text-white">{</span></p>
             <p class="indent text-grey">font-size<span class="text-white">:</span><span class="text-chocolate"> 16px</span><span class="text-white">;</span></p>
             <p class="indent text-grey">width<span class="text-white">:</span><span class="text-chocolate"> 80vm</span><span class="text-white">;</span></p>
@@ -53,10 +54,9 @@
             <p class="indent text-grey">font-size<span class="text-white">: </span><span class="text-chocolate">3em</span><span class="text-white">;</span></p>
             <p class="indent text-grey">padding<span class="text-white">: </span><span class="text-chocolate">10%</span><span class="text-white">;</span></p>
             <p class="text-white">}</p>
-
         </div>
     </div>
-    <div class="div-under">
+    <div class=" div-under">
         <h3>CSS value processing: What you need to know</h3>
         <ul>
             <li>Each property has an initial value, used if nothing is declared (and if there is no inheritance)</li>
@@ -186,7 +186,7 @@
     </div>
     <div>
         <hr>
-        <h3>Installation of hte Sass package</h3>
+        <h3>Installation of the Sass package</h3>
         <p>To install the sass npm package:</p>
         <ul>
             <li>npm install node-sass --save-dev</li>
@@ -222,9 +222,30 @@
         <p>if everything is good the main page for the project should open on the specified browser</p>
         <p><strong>note:</strong> need to investigate further but, if you are compiling sass start that 
             first then start live-server.<br>
-            Found that if you do it the other way around it will not work.
+            Found that if you do it the other way around it may not work.
         </p>
     </div>
+
+    <div>
+        <h3>Sass files organisation</h3>
+
+    </div>
+
+    <div class="container1">
+        <div class="row1 clearfix">
+            <div class="left-margin">left-margin</div>
+            <div class="col-1-of-4">col-1-of-4</div>
+            <div class="horizontal-gutter">horizontal-gutter</div>
+            <div class="col-1-of-4">col-1-of-4</div>
+            <div class="horizontal-gutter">horizontal-gutter</div>
+            <div class="col-1-of-4">col-1-of-4</div>
+            <div class="horizontal-gutter">horizontal-gutter</div>
+            <div class="col-1-of-4">col-1-of-4</div>
+            <div class="right-margin">right-margin</div>
+
+        </div>
+    </div>
+    
     
 
 

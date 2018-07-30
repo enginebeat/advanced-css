@@ -1,0 +1,35 @@
+.container1 {
+    background-color: red;
+}
+
+.row1 {
+    max-width: 100%;
+    background-color: #eee;
+    margin: 0 auto;
+}
+
+.left-margin {
+    float: left;
+    width: 10%;
+}
+
+.right-margin {
+    float: left;
+    width: 10%;
+}
+
+.horizontal-gutter {
+    float: left;
+    width: 5%;
+    background-color: aqua;
+}
+
+.col-1-of-4 {
+    float: left;
+    width: 16%;
+    background-color: rgb(245, 255, 240);
+    text-align: center;
+    border: 1px solid black;
+}
+
+
