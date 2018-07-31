@@ -122,7 +122,8 @@
     display: inline;
 }
 
-.compile-sass-p {
+.image-title-p {
+    margin-top: 30px;
     margin-bottom: 15px;
 }
 
