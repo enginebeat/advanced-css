@@ -166,6 +166,7 @@ p{
     width: 400px;
 }
 
+/*
 .extends-notes {
     width: 800px;
     height: 500px;
@@ -184,6 +185,7 @@ p{
     float: right;
     width: 400px;
 }
+*/
 
 .row {
     max-width: 60%rem;
