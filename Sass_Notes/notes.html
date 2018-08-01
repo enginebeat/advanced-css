@@ -160,22 +160,20 @@
                 <img src="notes_img/function_declare.PNG" alt="functions1"> 
             </div>
         </div>
-
-        <div class="col-1-of-4">
+        <div class="horizontal-gutter"></div>
+        <div class="col-3-of-4">
             <p>Function use</p>
             <div>
                 <img src="notes_img/function_use.PNG" alt="functions2">
             </div>
         </div>
-        <div class="horizontal-gutter"></div>
-        <div class="col-2-of-4"></div>
         <div class="right-margin"></div>
     </div>
         
     
     
     
-    <div class="extends-notes row1 clearfix">
+    <div class="row1 clearfix">
         <div class="left-margin"></div>
         <div class="col-4-of-4">
             <h3>Extends</h3>
@@ -186,7 +184,7 @@
             </p>
         </div>
     </div>
-    <div class="extends-notes1 row1 clearfix">
+    <div class="row1 clearfix">
         <div class="left-margin"></div> 
         <div class="extends-notes__declaration col-2-of-4">
             <p class="image-title-p">Extends declaration</p>
@@ -225,8 +223,12 @@
             <div>
                 <img src="notes_img/compile_sass_package_json.PNG" alt="compile-sass__pic1">
             </div>
-    
-            <p>to start auto compilaton on file change (save), just run the script</p>
+            <p>note that we are specifing the Sass main file and the target css file</p>
+            <p>the -w flag tells the node-sass package to look out and compile on change of any related Sass files</p>
+            <p><strong>something to note is the fact that if you add a file 
+            or change the name of a file then you need to restart the script 
+            or it<br>will ignore the change on that file</strong></p>
+            <p class="image-title-p">to start auto compilaton on file change (save), just run the script</p>
             <ul>
                 <li>npm run compile:sass</li>
             </ul>
@@ -247,9 +249,15 @@
             <ul>
                 <li>live-server</li>
             </ul>
+            <p>To change from default browser:</p>
+            <ul>
+                <li>live-server --browser=BROWSER</li>
+            </ul>
+            <p>See the package page for more useful flags</p>
             <p>if everything is good the main page for the project should open on the specified browser</p>
+            <br>
             <p class="col-p"><strong>note:</strong> need to investigate further but, if you are compiling sass start that 
-                first then start live-server.<br>
+                first then start live-server.
                 Found that if you do it the other way around it may not work.
             </p>
         </div>
@@ -257,10 +265,17 @@
         
     </div>
 
-    <div>
-        <h3>Sass files organisation</h3>
-
+    <div class="row1 clearfix">
+        <div class="left-margin"></div>
+        <div class="col-4-of-4">
+            <h3>Sass files organisation</h3>
+        </div>
+        <div class="right-margin"></div>
     </div>
+
+
+
+
 
     <div class="container1">
         <div class="row1 clearfix">
