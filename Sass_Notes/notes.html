@@ -289,7 +289,11 @@
             <ul>
                 <li>ease for transition</li>
                 <li>in clip-path, dimensions are top/left, top/right, bottom/right & finally bottom/left</li>
-                <li>box-decoration-break</li>
+                <li>box-decoration-break. this is used when you have text that you want to span two or more lines. 
+                    normally the padding and such will be lost on the consequent lines and the box-decoration-break 
+                    will allow each line to be treated as pretty much as an independ element. using clone as the attribute
+                    will copy all the decorations from the first line to the others.
+                </li>
             </ul>
             
         </div>
