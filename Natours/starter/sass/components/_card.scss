@@ -75,7 +75,7 @@
         text-align: right;
         color: $colour-white;
         position: absolute;
-        top: 12rem;
+        top: 8rem;
         right: 2rem;
         width: 75%;
 
@@ -88,6 +88,26 @@
 
         &--1 {
             background-image: linear-gradient(to right bottom, rgba($colour-secondary-light, .85), rgba($colour-secondary-dark, .85));
+        }
+    }
+
+    &__details {
+        padding: 3rem;
+        ul {
+            list-style: none;
+            width: 80%;
+            margin: 0 auto;
+
+            li {
+                text-align: center;
+                font-size: 1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child) {
+                    border-bottom: 1px solid $color-grey-light-2;
+
+                }
+            }
         }
     }
 }
