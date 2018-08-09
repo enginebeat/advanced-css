@@ -47,7 +47,7 @@ Dark green: #28b485
 
 html {
   /* this defines what 1rem is so it is a global setting instead of typography */
-  font-size: 62.5%;
+  font-size: 10px;
   /* 1rem is now exactly 10px */ }
 
 body {
@@ -234,10 +234,10 @@ body {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem; }
+  height: 52rem; }
   .card__side {
     background-color: #fff;
-    height: 50rem;
+    height: 52rem;
     transition: all .8s ease;
     position: absolute;
     top: 0;
@@ -294,13 +294,25 @@ body {
     .card__details ul {
       list-style: none;
       width: 80%;
-      margin: 0 auto; }
+      margin: 0 auto;
+      padding: 0 0; }
       .card__details ul li {
         text-align: center;
         font-size: 1.5rem;
         padding: 1rem; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
 
 .feature-box {
   background-color: rgba(255, 255, 255, 0.8);
