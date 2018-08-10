@@ -1,0 +1,14 @@
+{
+  "name": "sass_notes",
+  "version": "1.0.0",
+  "description": "my sass notes",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/notes.css -w"
+  },
+  "author": "LM",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.3"
+  }
+}
