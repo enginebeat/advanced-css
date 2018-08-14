@@ -9,8 +9,8 @@
     padding: 20rem 0;
     background-image: linear-gradient(
         to right bottom, 
-        $colour-primary-lighter, 
-        $colour-primary-darker),
+        rgba($colour-primary-lighter, .75), 
+        rgba($colour-primary-darker, .75)),
         url(../img/nat-4.jpg);
     background-size: cover;
 
@@ -26,6 +26,11 @@
     background-color: $color-grey-light-1;
     padding: 25rem 0;
     margin-top: -10rem;
+}
+
+.section-stories {
+    background-color: $color-grey-light-1;
+    padding: 15rem 0;
 }
 
 

@@ -17,23 +17,33 @@
         transform: translateY(-.3rem);
         box-shadow: 0 1rem 2rem rgba($colour-black, 0.2);
 
-        &::after{
+        &::after {
             transform: scale(1.2);
             opacity:0;
         }
     }
 
-    &:active{
+    &:active {
         transform: translateY(-1px);
         box-shadow: 0 .5rem 2rem rgba($colour-black,0.2);
     }
 
-    &--white{
+    &--white {
         background-color: $colour-white;
         color: $colour-dark-grey;
 
         &::after{
             background-color: $colour-white;
+        }
+
+    }
+
+    &--green {
+        background-color: $colour-primary;
+        color: $colour-white;
+
+        &::after{
+            background-color: $colour-primary;
         }
 
     }
