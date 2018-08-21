@@ -9,9 +9,41 @@
 
 html{
     /* this defines what 1rem is so it is a global setting instead of typography */
-    font-size: 10px; /* 1rem is now exactly 10px */
+    font-size: 62.5%; /* 1rem is now exactly 10px  10px/16px = 62.5% */
+
+    /*using the first form of the mixin
+    @include respond-phone {
+        font-size: 50%;
+    }
+    */
+
+    //using the general form of the mixin for media query
+    //@include respond(phone) {
+        //font-size: 50%;
+    //}
+
+
+    //*** notice the order ***
+
+    @include respond(tab-land) {    // width < 1200?
+        font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+    }
+
+    @include respond(tab-port) {    // width < 900?
+        font-size: 50%; // 1rem = 8px, 8/16 = 50%
+    }
+
+    @include respond(big-desktop) {
+        font-size: 80%; // 1rem = 12px, 12/16 = 75%
+    }
+
 }
 
 body{
     box-sizing: border-box; /* border box which includes padding and margin */
+    padding: 3rem; /* responsable for small border around the all of the page */
+
+    @include respond(tab-port) {    // width < 900?
+        padding: 0; /* responsable for small border around the all of the page */
+    }
 }

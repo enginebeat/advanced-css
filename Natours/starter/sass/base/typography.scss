@@ -4,7 +4,6 @@ body{
     /*font-size: 16px*/;
     line-height: 1.7;
     color: $colour-dark-grey;
-    padding: 3rem; /* responsable for small border around the all of the page */
 }
 
 
@@ -14,7 +13,8 @@ body{
         color: $colour-white;
         text-transform: uppercase;
         margin-bottom: 6rem;
-    
+
+            
         /*  A span element is default an inline element,
         so to get them under each other we tell them 
         to display as block elements instead.
@@ -31,6 +31,11 @@ body{
             animation-name: moveInLeft;
             animation-duration: 1s;
             animation-timing-function: ease-out;
+            
+            @include respond(phone) {
+                font-size: 5rem;
+                letter-spacing: 1rem;
+            }
         
             /*  to fix small shake at the beggining 
                 of the animation. No one knows why it happens
@@ -58,6 +63,11 @@ body{
             animation-duration: 1s;
             animation-timing-function: ease-out;
             */
+
+            @include respond(phone) {
+                
+                letter-spacing: .5rem;
+            }
         }
     }
 }
@@ -73,6 +83,14 @@ body{
     color: transparent;
     letter-spacing: 2px;
     transition: all .2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.1);
