@@ -11,6 +11,13 @@
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(tab-port) {
+            width: 100%;
+            //text-align: center;
+            float: none;
+            margin-bottom: 6rem;
+        }
     }
 
     &__logo {
@@ -68,10 +75,11 @@
         widows: 80%;
         float: right;
 
-        display: inline-block;
+       
+
         @include respond(tab-port) {
             width: 100%;
-            text-align: center;
+            //text-align: center;
             float: none;
         }
 
