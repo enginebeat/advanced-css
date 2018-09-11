@@ -16,6 +16,12 @@
     align-items: center;
     justify-items: center; 
 
+    @media only screen and (max-width: $bp-smallest) {
+        order: 1;
+        flex: 0 0 100%;
+        background-color: var(--colour-grey-light-2);
+    }
+
     &__input {
         font-family: inherit;   // needs to be set to inherit as imput elements do not inherit automatically.
         font-size: inherit;     // needs to be set to inherit as imput elements do not inherit automatically.
@@ -153,7 +159,14 @@
 .side-nav {
     font-size: 1.4rem;
     list-style: none;
-    flex: 0 0 80%;
+    margin-top: 3.5rem;
+    //flex: 0 0 80%;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: flex;
+        margin: 0;
+    }
+
     
 
 
@@ -162,6 +175,14 @@
 
         &:not(::last-child) {
             margin-bottom: .5rem;
+
+            @media only screen and (max-width: $bp-medium) {
+                margin: 0;
+            }
+        }
+
+        @media only screen and (max-width: $bp-medium) {
+            flex: 1;
         }
     }
 
@@ -207,6 +228,16 @@
         
         position: relative; // specified here for the z-index. z-index will not work unless the position is specified
         z-index: 10;
+
+        @media only screen and (max-width: $bp-medium) {
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        @media only screen and (max-width: $bp-small) {
+            flex-direction: column;
+            padding: 1.5rem;
+        }
         
 
     }
@@ -216,6 +247,14 @@
         width: 1.5rem;
         margin-right: 2rem;
         fill: currentColor;
+
+        @media only screen and (max-width: $bp-small) {
+            margin: 0;
+            margin-bottom: 7px;
+            width: 1.5rem;
+            height: 1.5rem;
+            
+        }
         
     }
     /*
@@ -236,6 +275,10 @@
     color: var(--colour-grey-light-4);
     text-align: center;
     padding: 2.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+        display: none;
+    }
 }
 
 //////////////////////////////////////////////////////////////////
@@ -264,6 +307,11 @@
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1.5rem 3.5rem;
+
+        @media only screen and (max-width: $bp-small) {
+            font-size: 1.8rem;
+            padding: 1.25rem 2rem;
+        }
     }
 
     &__stars {
@@ -302,16 +350,26 @@
         justify-content: centre;
         padding: 1rem 2rem;
 
+        @media only screen and (max-width: $bp-small) {
+            padding: 0 1.5rem;
+        }
+
         &-average {
             font-size: 2.25rem;
             font-weight: 300;
             margin-bottom: 2px;
+            @media only screen and (max-width: $bp-small) {
+                font-size: 1.8rem;
+            }
         
         }
 
         &-count {
            font-size: .8rem;
            text-transform: uppercase; 
+           @media only screen and (max-width: $bp-small) {
+            font-size: .5rem;
+        }
         }
 
     }
@@ -391,9 +449,18 @@
     display: flex;
     flex-wrap: wrap;
 
+    @media only screen and (max-width: $bp-galaxyS5) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+
     &__item {
         flex: 0 0 50%;
         margin-bottom: 0.7rem;
+
+        @media only screen and (max-width: $bp-galaxyS5) {
+            margin-bottom: 1.5rem;
+        }
     }
 
     &__item::before {
@@ -405,15 +472,19 @@
 
 
         //Older browsers
-        //background-image: url(../img/chevron-thin-right.svg);
-        //background-size: cover;
+        background-image: url(../img/chevron-thin-right.svg);
+        background-size: cover;
 
         //Newer browsers - masks
-        background-color: var(--colour-primary);
-        -webkit-mask-image: url(../img/chevron-thin-right.svg);
-        -webkit-mask-size: cover;
-        mask-image: url(../img/chevron-thin-right.svg);
-        mask-size: cover;
+        @supports (-webkit-mask-image: url()) or (mask-image: url()) {
+            background-color: var(--colour-primary);
+            -webkit-mask-image: url(../img/chevron-thin-right.svg);
+            -webkit-mask-size: cover;
+            mask-image: url(../img/chevron-thin-right.svg);
+            mask-size: cover;
+            background-image: none;
+        }
+        
 
 
 
@@ -437,7 +508,7 @@
     }
 
     &__friends {
-
+        display: flex;
     }
 
     &__photo {
@@ -448,7 +519,7 @@
         border: 3px solid #fff;
         
         &:not(:last-child) {
-            margin-right: -1.5rem;
+            margin-right: -2rem;
         }
     }
 
@@ -463,6 +534,11 @@
     padding: 3rem;
     margin-bottom: 3.5rem;
     overflow: hidden;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2rem;
+        margin-bottom: 3rem;
+    }
 
     &__text {
         z-index: 10;
@@ -525,6 +601,11 @@
 .cta {
     padding: 3.5rem 0;
     text-align: center;
+
+    @media only screen and (max-width: $bp-medium) {
+        padding: 2.5rem 0;
+        
+    }
 
     &__book-now {
         font-size: 2rem;
