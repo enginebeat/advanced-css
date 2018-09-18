@@ -1,5 +1,5 @@
 .homes {
-    background-color: $color-secondary;
+    //background-color: $color-secondary;
     grid-column: center-start / center-end;
     margin: 15rem 0;
 
@@ -7,7 +7,7 @@
 
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 7rem;
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
 
 }
 
